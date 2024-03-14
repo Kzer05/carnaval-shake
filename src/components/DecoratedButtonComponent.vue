@@ -10,7 +10,7 @@
 
 <style scoped>
 .button {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 

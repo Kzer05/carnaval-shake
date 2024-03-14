@@ -21,7 +21,9 @@ import icon from "@/assets/icon.svg";
             </div>
 
             <div id="buttons">
-                <DecoratedButton type="rectangle">Entrar</DecoratedButton>
+                <RouterLink to="/event">
+                    <DecoratedButton type="rectangle">Entrar</DecoratedButton>
+                </RouterLink>
                 <DecoratedButton type="text">Esqueci minha senha!</DecoratedButton>
                 <RouterLink to="/signup">
                     <DecoratedButton type="text">Não tenho uma conta!</DecoratedButton>

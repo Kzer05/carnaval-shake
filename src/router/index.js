@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import WelcomeView from '../views/WelcomeView.vue'
-import EventView from '../views/WelcomeView.vue'
+import EventView from '../views/EventView.vue'
 import SignupView from '../views/SignupView.vue'
 import SigninView from '../views/SigninView.vue'
 

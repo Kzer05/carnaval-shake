@@ -11,10 +11,11 @@ import icon from "@/assets/icon.svg";
     <div id="container">
 
         <Box id="box" color="orange">
-            <img id="icon" :src="icon" alt="Icone da taça">
-            <p id="first-p">FAÇA O SEU CADASTRO EM</p>
-            <h1>CARNAVAL SHAKE</h1>
-
+            <header id="header-box">
+                <img id="icon" :src="icon" alt="Icone da taça">
+                <p id="first-p">FAÇA O SEU CADASTRO EM</p>
+                <h1>CARNAVAL SHAKE</h1>
+            </header>
 
             <div id="inputs">
                 <DecoratedInput label="Nome" type="text"></DecoratedInput>
@@ -27,7 +28,9 @@ import icon from "@/assets/icon.svg";
             </div>
 
             <div id="buttons">
-                <DecoratedButton type="rectangle">Registrar-se</DecoratedButton>
+                <RouterLink to="/event">
+                    <DecoratedButton type="rectangle">Registrar-se</DecoratedButton>
+                </RouterLink>
                 <RouterLink to="/signin">
                     <DecoratedButton type="text">Já tenho uma conta</DecoratedButton>
                 </RouterLink>
@@ -54,8 +57,12 @@ import icon from "@/assets/icon.svg";
     margin: 0 auto;
 }
 
+#header-box {
+    height: 20%;
+}
+
 img#icon {
-    height: 90px;
+    height: 80px;
     margin-top: 10px;
 }
 
@@ -64,12 +71,12 @@ p#first-p {
 }
 
 h1 {
-    margin: 0 auto 50px 0;
+    margin: 0 auto 5% 0;
 }
 
 
 #inputs>* {
-    margin-bottom: 50px;
+    margin-bottom: 10%;
 }
 
 #terms {
@@ -77,6 +84,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    text-align: left;
 }
 
 #terms #checkBox {

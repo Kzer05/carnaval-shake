@@ -2,8 +2,10 @@
 import { RouterLink } from 'vue-router'
 import DecoratedButton from '@/components/DecoratedButtonComponent.vue';
 import Box from '@/components/BoxComponent.vue';
-import icon from '../assets/icon.svg'
 </script>
+
+
+<!-- todo: fazer uma versão sem o botão de codigo do amigo --> 
 
 <template>
     <Box id="welcome-box">
@@ -44,6 +46,8 @@ import icon from '../assets/icon.svg'
             <DecoratedButton type="text" text-color="#FF2E00">Já tenho meu drink!</DecoratedButton>
         </RouterLink>
     </div>
+
+    <footer> © 2024 Revigorah - All Rights Reserved.</footer>
 </template>
 
 
@@ -91,6 +95,7 @@ h1 {
 }
 
 #big-image-event {
+    /* height: 35vh; */
     height: 35vh;
     max-width: 100%;
     object-fit: cover;
@@ -132,96 +137,32 @@ h1 {
     margin: 20px auto;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.411);
-    overflow: auto;
-    transition: opacity 0.3s ease;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.active {
-    display: block;
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: #FBE3CD;
-    color: #E98458;
-    margin: auto;
-    padding: 20px;
-    width: 80%;
-    max-height: 100%;
-    overflow-y: auto;
-    border-radius: 24px;
-    /* Apply border-radius similar to .box */
-    box-shadow: 0px 4px 29.5px -14px rgb(0, 0, 0);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    /* Add some top margin similar to .loginahref */
-}
-
-.close:hover,
-.close:focus {
-    color: #E98458;
-    /* Change color on hover/focus */
-    text-decoration: none;
-}
-
-.modal-content label {
-    display: block;
-    margin-bottom: 8px;
-    color: #E98458;
-    /* Label color */
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #E98458;
-    /* Input border color */
-    border-radius: 8px;
-    /* Input border-radius */
-}
-
-.modal-content input:focus {
-    outline: none;
-    border-color: #DA3030;
-    /* Input border color on focus */
-}
-
-.modal-content button {
+footer {
     color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #DA3030 0%, #F55B3A 100%);
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(2px);
-    font-size: 16px;
-    transition: 0.2s;
 }
 
-.modal-content button:hover {
-    filter: contrast(0.8);
-}
+@media only screen and  (max-height: 670px) {
+    #buttons {
+        height: 25vh;
+        justify-content: center;
+    }
 
+    footer {
+        display: none;
+    }
+    #div-image-event {
+        height: 35vh;
+    }
+
+    #big-image-event {
+        height: 35vh;
+    }
+}
 
 @media only screen and (max-width: 767px) and (min-height: 800px) {
+
+
+
     #div-image-event {
         height: 40%;
         margin: 5% 0;
