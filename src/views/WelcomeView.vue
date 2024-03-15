@@ -40,7 +40,9 @@ import Box from '@/components/BoxComponent.vue';
             <DecoratedButton type="filled">CRIAR MEU DRINK</DecoratedButton>
         </RouterLink>
         
-        <DecoratedButton type="filled">INSERIR CÓDIGO DE AMIGO</DecoratedButton>
+        <RouterLink to="/code_friend">
+            <DecoratedButton type="filled">INSERIR CÓDIGO DE AMIGO</DecoratedButton>
+        </RouterLink>
         
         <RouterLink to="/signin">
             <DecoratedButton type="text" text-color="#FF2E00">Já tenho meu drink!</DecoratedButton>
@@ -160,9 +162,6 @@ footer {
 }
 
 @media only screen and (max-width: 767px) and (min-height: 800px) {
-
-
-
     #div-image-event {
         height: 40%;
         margin: 5% 0;
@@ -198,18 +197,6 @@ footer {
 
     .credits {
         grid-area: 2 / 1 / 3 / 4;
-    }
-
-    .modal-content {
-        background-color: #FBE3CD;
-        color: #E98458;
-        margin: auto;
-        padding: 20px;
-        width: 50%;
-        max-height: 100%;
-        overflow-y: auto;
-        border-radius: 24px;
-        box-shadow: 0px 4px 29.5px -14px rgba(0, 0, 0, 0.342);
     }
 }
 </style>

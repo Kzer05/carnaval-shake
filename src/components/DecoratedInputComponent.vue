@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
-const props = defineProps(['label', 'type']
-)
+const props = defineProps(['label', 'type'])
+
 const value = ref('');
 const isFocused = ref(false);
 

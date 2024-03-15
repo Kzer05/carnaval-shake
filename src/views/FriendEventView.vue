@@ -42,7 +42,9 @@ import orange from '@/assets/stickers/laranja.png';
     </div>
 
     <div id="buttons">
-        <DecoratedButton type="filled">COMPARTILHAR DRINK</DecoratedButton>
+        <RouterLink to="/chose_sticker">
+            <DecoratedButton type="filled">DEIXAR UM INGREDIENTE</DecoratedButton>
+        </RouterLink>
     </div>
 
     <footer> © 2024 Revigorah - All Rights Reserved.</footer>
@@ -186,6 +188,18 @@ footer {
 
     .credits {
         grid-area: 2 / 1 / 3 / 4;
+    }
+
+    .modal-content {
+        background-color: #FBE3CD;
+        color: #E98458;
+        margin: auto;
+        padding: 20px;
+        width: 50%;
+        max-height: 100%;
+        overflow-y: auto;
+        border-radius: 24px;
+        box-shadow: 0px 4px 29.5px -14px rgba(0, 0, 0, 0.342);
     }
 }
 </style>
