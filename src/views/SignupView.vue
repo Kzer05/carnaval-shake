@@ -10,7 +10,7 @@ import icon from "@/assets/icon.svg";
 <template>
     <div id="container">
 
-        <Box id="box" color="orange">
+        <Box id="box" color="orange" back-arrow-to="/">
             <header id="header-box">
                 <img id="icon" :src="icon" alt="Icone da taça">
                 <p id="first-p">FAÇA O SEU CADASTRO EM</p>
@@ -106,5 +106,9 @@ h1 {
 
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    #box {
+        width: 30%;
+    }
+}
 </style>

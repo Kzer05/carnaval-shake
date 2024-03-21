@@ -5,10 +5,11 @@ import Box from '@/components/BoxComponent.vue';
 </script>
 
 
-<!-- todo: fazer uma versão sem o botão de codigo do amigo --> 
+<!-- todo: fazer uma versão sem o botão de codigo do amigo -->
 
 <template>
-    <Box id="welcome-box">
+    <div id="welcome">
+        <Box id="welcome-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65" fill="none">
                 <path
                     d="M22.1345 60.9354C21.0128 60.9354 20.1035 61.8449 20.1035 62.9665C20.1035 64.0882 21.0128 64.9974 22.1345 64.9974V60.9354ZM38.3826 64.9974C39.5042 64.9974 40.4135 64.0882 40.4135 62.9665C40.4135 61.8449 39.5042 60.9354 38.3826 60.9354V64.9974ZM22.1345 64.9974H38.3826V60.9354H22.1345V64.9974Z"
@@ -27,29 +28,30 @@ import Box from '@/components/BoxComponent.vue';
                     fill="#E98458" />
             </svg>
 
-        <p>SEJA BEM VINDO AO</p>
-        <h1>CARNAVAL SHAKE</h1>
-    </Box>
-    <div id="div-image-event">
-        <img id="big-image-event" src="../assets/cup.png" alt="Taça">
-        <!-- <img id="reflex-big-image-event" src="./imgs/cup.png" alt="Reflexo da taça"> -->
-    </div>
+            <p>SEJA BEM VINDO AO</p>
+            <h1>CARNAVAL SHAKE</h1>
+        </Box>
+        <div id="div-image-event">
+            <img id="big-image-event" src="../assets/cup.png" alt="Taça">
+            <!-- <img id="reflex-big-image-event" src="./imgs/cup.png" alt="Reflexo da taça"> -->
+        </div>
 
-    <div id="buttons">
-        <RouterLink to="/signup">
-            <DecoratedButton type="filled">CRIAR MEU DRINK</DecoratedButton>
-        </RouterLink>
-        
-        <RouterLink to="/code_friend">
-            <DecoratedButton type="filled">INSERIR CÓDIGO DE AMIGO</DecoratedButton>
-        </RouterLink>
-        
-        <RouterLink to="/signin">
-            <DecoratedButton type="text" text-color="#FF2E00">Já tenho meu drink!</DecoratedButton>
-        </RouterLink>
-    </div>
+        <div id="buttons">
+            <RouterLink to="/signup">
+                <DecoratedButton type="filled">CRIAR MEU DRINK</DecoratedButton>
+            </RouterLink>
 
-    <footer> © 2024 Revigorah - All Rights Reserved.</footer>
+            <RouterLink to="/code_friend">
+                <DecoratedButton type="filled">INSERIR CÓDIGO DE AMIGO</DecoratedButton>
+            </RouterLink>
+
+            <RouterLink to="/signin">
+                <DecoratedButton type="text" text-color="#FF2E00">Já tenho meu drink!</DecoratedButton>
+            </RouterLink>
+        </div>
+
+        <footer> © 2024 Revigorah - All Rights Reserved.</footer>
+    </div>
 </template>
 
 
@@ -143,7 +145,7 @@ footer {
     color: white;
 }
 
-@media only screen and  (max-height: 670px) {
+@media only screen and (max-height: 670px) {
     #buttons {
         height: 25vh;
         justify-content: center;
@@ -152,6 +154,7 @@ footer {
     footer {
         display: none;
     }
+
     #div-image-event {
         height: 35vh;
     }
@@ -197,6 +200,14 @@ footer {
 
     .credits {
         grid-area: 2 / 1 / 3 / 4;
+    }
+
+    #welcome {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 10fr 1fr;
+        align-items: center;
     }
 }
 </style>

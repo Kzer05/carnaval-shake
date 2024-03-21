@@ -2,55 +2,63 @@
 import { RouterLink } from 'vue-router'
 import DecoratedButton from '@/components/DecoratedButtonComponent.vue';
 import orange from '@/assets/stickers/laranja.png';
+
+
 </script>
 
 <template>
-    
-    <div id="div-image-event">
-        <img id="big-image-event" src="../assets/cup.png" alt="Taça">
-        <div id="Ingredients">
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
-            </div>
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
-            </div>
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
-            </div>
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
-            </div>
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
-            </div>
-            <div class="ingredient">
-                <img :src="orange" alt="Laranja">
-                <p>Kzer0</p>
+    <div id="event">
+        <div id="div-image-event">
+            <img id="big-image-event" src="../assets/cup.png" alt="Taça">
+            <div id="ingredients">
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
+                <div class="ingredient">
+                    <img :src="orange" alt="Laranja">
+                    <p>Kzer0</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="content">
-         <p id="event-quantity">1/20</p>
-         <p id="event-person">DRINK DE <span id="person">Caruzo</span></p>
-    </div>
+        <div id="content">
+            <p id="event-quantity">1/20</p>
+            <p id="event-person">DRINK DE <span id="person">Caruzo</span></p>
+        </div>
 
-    <div id="buttons">
-        <DecoratedButton type="filled">COMPARTILHAR DRINK</DecoratedButton>
-    </div>
+        <div id="buttons">
+            <DecoratedButton v-if="!isFriend" type="filled">COMPARTILHAR DRINK</DecoratedButton>
 
-    <footer> © 2024 Revigorah - All Rights Reserved.</footer>
+            <RouterLink v-if="isFriend" to="/chose_sticker">
+                <DecoratedButton type="filled">DEIXAR UM INGREDIENTE</DecoratedButton>
+            </RouterLink>
+        </div>
+
+
+        <footer> © 2024 Revigorah - All Rights Reserved.</footer>
+    </div>
 </template>
 
 
 <style scoped>
-#Ingredients {
+#ingredients {
     position: absolute;
     padding: 80px;
     top: 0;
@@ -63,8 +71,8 @@ import orange from '@/assets/stickers/laranja.png';
     gap: 10px;
 }
 
-#Ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(1),
-#Ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(2) {
+#ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(1),
+#ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(2) {
     margin: 0 5%;
 }
 
@@ -100,6 +108,7 @@ p#event-person {
     font-size: 35px;
     color: #828282;
 }
+
 #person {
     color: #9C2E2E;
 }
@@ -145,7 +154,7 @@ footer {
     color: white;
 }
 
-@media only screen and  (max-height: 670px) {
+@media only screen and (max-height: 670px) {
     #buttons {
         height: 25vh;
         justify-content: center;
@@ -158,14 +167,31 @@ footer {
 
 
 @media screen and (min-width: 768px) {
-
-    #welcome-box {
-        width: 40%;
-        height: min-content;
-        margin-top: 10%;
-        padding: 50px;
+    #event {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 
+    #ingredients {
+        padding: 20% 30%;
+    }
+
+    #ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(1),
+    #ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(2) {
+        margin: 0 0;
+    }
+
+    .ingredient img {
+        width: 5vw;
+    }
+
+    .ingredient p {
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 15px black;
+    }
 
     #div-image-event {
         height: 100%;
@@ -185,7 +211,8 @@ footer {
     }
 
     .credits {
-        grid-area: 2 / 1 / 3 / 4;
+        /*         grid-area: 2 / 1 / 3 / 4;
+ */
     }
 }
 </style>

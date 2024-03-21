@@ -76,5 +76,9 @@ h1 {
     color: white !important;
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    #box {
+        width: 30%;
+    }
+}
 </style>

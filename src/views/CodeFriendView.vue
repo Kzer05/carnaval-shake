@@ -9,7 +9,7 @@ import DecoratedInput from "@/components/DecoratedInputComponent.vue";
 <template>
     <div id="container">
 
-        <Box id="box" color="orange">
+        <Box id="box" color="orange" back-arrow-to="/">
             <h1>Encontre seus amgos com o código deles!</h1>
 
             <div id="inputs">
@@ -43,7 +43,7 @@ import DecoratedInput from "@/components/DecoratedInputComponent.vue";
 
 h1 {
     font-size: 20px;
-    margin: 10px auto 20px 0;
+    margin: 40px auto 20px 0;
 }
 
 #inputs {
@@ -62,5 +62,9 @@ h1 {
     align-items: center;
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    #box {
+        width: 30%;
+    }
+}
 </style>

@@ -1,14 +1,29 @@
 <script setup>
-    const props = defineProps(["color"])
+    import { RouterLink } from 'vue-router'
+
+    const props = defineProps(["color", "backArrowTo"])
 </script>
 
 <template>
     <div :class="['box', {'orangeBox': color == 'orange'}]">
+        <RouterLink v-if="backArrowTo" :to="backArrowTo">
+            <div id="back"> </div>
+        </RouterLink>
         <slot></slot>
     </div>
 </template>
 
-<style>
+<style scoped>
+    #back {
+        position: absolute;
+        padding: 12px;
+        box-shadow: 2px -2px 0 1px #ffffff inset;
+        border: solid transparent;
+        border-width: 0 0 2px 2px;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+
     .box {
         background-color: #FBE3CD;
         color: #E98458;
