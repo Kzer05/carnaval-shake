@@ -175,16 +175,16 @@ footer {
     }
 
     #ingredients {
-        padding: 20% 30%;
+        padding: 15% 35%;   
     }
 
-    #ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(1),
-    #ingredients:has(.ingredient:nth-child(2)) .ingredient:nth-child(2) {
-        margin: 0 0;
+    #ingredients:has(.ingredient:nth-child(3)) .ingredient:nth-child(1),
+    #ingredients:has(.ingredient:nth-child(3)) .ingredient:nth-child(2) {
+        margin: 0 5%;
     }
 
     .ingredient img {
-        width: 5vw;
+        width: 4vw;
     }
 
     .ingredient p {
@@ -208,11 +208,6 @@ footer {
         flex-direction: column;
         align-items: center;
         height: min-content;
-    }
-
-    .credits {
-        /*         grid-area: 2 / 1 / 3 / 4;
- */
     }
 }
 </style>
